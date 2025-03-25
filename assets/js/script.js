@@ -37,7 +37,7 @@ class StudentManage {
                     <td>${student.course}</td>
                     <td>${student.gender}</td>
                     <td class="p-2">
-                        <button class="btn btn-warning btn-sm" onclick="updateStudent(${index})">✏️</button>
+                        <button class="btn btn-primary btn-sm" onclick="updateStudent(${index})">✏️</button>
                     </td>
                     <td class="p-2">
                         <button class="btn btn-danger btn-sm" onclick="deleteStudent(${index})">🗑️</button>
@@ -119,18 +119,18 @@ function createUpdateStudent() {
         Swal.fire("Validation Error", "Please select a gender!", "error");
         return;
     }
-    if(manage.students.some((record)=>{
-        return record.emailId === emailId 
-    })){
-        Swal.fire("Validation Error", "  invalid email!", "error");
-        return;
-    }
-    if(manage.students.some((record)=>{
-        return record.grid === grid
-    })){
-        Swal.fire("Validation Error", " invalid grid!", "error");
-        return;
-    }
+    // if(manage.students.some((record)=>{
+    //     return record.emailId === emailId 
+    // })){
+    //     Swal.fire("Validation Error", "  invalid email!", "error");
+    //     return;
+    // }
+    // if(manage.students.some((record)=>{
+    //     return record.grid === grid
+    // })){
+    //     Swal.fire("Validation Error", " invalid grid!", "error");
+    //     return;
+    // }
     
     const student = new Student(firstName, lastName, grid, contactNo, emailId, course, gender);
 
